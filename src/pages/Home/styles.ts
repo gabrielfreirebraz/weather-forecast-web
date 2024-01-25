@@ -5,26 +5,6 @@ export const HomeContainer = styled.div`
   width: 100%;
   position: relative;
 
-  #header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    padding: 1rem 0;
-    .header__logo {
-      max-width: 4.5rem;
-    }
-    h1 {
-      color: ${(props) => props.theme.white};
-      margin: 2rem 0;
-      font-size: 3rem;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 1rem 5rem;
-      letter-spacing: 0.4rem;
-    }
-  }
-
   // for background opacity
   &::before {
     position: absolute;
@@ -37,7 +17,7 @@ export const HomeContainer = styled.div`
       no-repeat center center;
     background-size: cover;
 
-    opacity: 0.5;
+    opacity: 0.2;
     content: "";
     z-index: -1;
   }
@@ -48,11 +28,78 @@ export const HomeContainer = styled.div`
   Large: https://images.teamtailor-cdn.com/images/s3/teamtailor-production/hero_picture_large_full_cover-v6/image_uploads/b9d7b84e-8bc9-43e9-b032-b9c85b87cfd4/original.jpeg
   */
 
+  #header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0;
+    .header__logo {
+      max-width: 4.5rem;
+    }
+    h1 {
+      color: ${(props) => props.theme.black};
+      margin: 2rem 0;
+      font-size: 2rem;
+      /* background-color: rgba(0, 0, 0, 0.7); */
+      padding: 1rem 5rem;
+      letter-spacing: 0.35rem;
+      font-weight: 900;
+      height: 10rem;
+      /* border: solid 1px red; */
+      text-align: center;
+      span {
+        color: #fff;
+      }
+      &::after {
+        background-image: url("/scratch-upstart13.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom right !important;
+        /* border: solid 1px #000; */
+        content: "";
+        display: block;
+        height: 100%;
+        /* margin-left: 1rem; */
+        margin-top: -7rem;
+        position: relative;
+        width: 31.87rem;
+        display: block;
+        z-index: -1;
+      }
+    }
+  }
+
   #main {
     background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    margin-top: 5rem;
-    height: 30rem;
+    -webkit-box-shadow: -3px 5px 135px 5px #cccccc;
+    box-shadow: -3px 5px 135px 5px #cccccc;
+    border-radius: 15px;
+    /* margin-top: 2rem; */
+    min-height: 12rem;
     width: 100%;
+  }
+
+  #footer {
+    /* background: rgba(255, 255, 255, 0.5); */
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    height: 9rem;
+
+    img {
+      max-height: 2.5rem;
+    }
+    p {
+      color: ${(props) => props.theme.black};
+      font-weight: 450;
+      font-size: 0.9rem;
+    }
   }
 `;
