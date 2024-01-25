@@ -11,6 +11,7 @@ export const Home = () => {
   return (
 
     <HomeContainer>
+      <div className='animate__animated animate__fadeIn'>
       <Row>
         <div id="header">
           <a href="https://upstart13.com" target="_blank">
@@ -46,6 +47,7 @@ export const Home = () => {
           </div>
         </Col>
       </Row>
+      </div>
     </HomeContainer>
     
 
