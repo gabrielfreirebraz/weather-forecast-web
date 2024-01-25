@@ -8,8 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     background: transparent;    
-    /* opacity: 0.5; */
-    
+    overflow: hidden;    
     height: 100%;
   }
   html {
