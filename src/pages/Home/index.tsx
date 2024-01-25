@@ -1,7 +1,8 @@
 // import { AppProvider } from '../../contexts/defaultContext';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Form, Row } from 'react-bootstrap';
 import { HomeContainer } from './styles';
 import imgFooter from '/nws.png'
+import { WiCloud } from 'react-icons/wi';
 
 import imgLogo from '../../assets/images/logo-upstart13.png'
 
@@ -24,18 +25,24 @@ export const Home = () => {
       <Row>
 
         <Col md={{span: 10, offset: 1}}>
-          <div id="main">
-
+          <div id="content">
             
+            <h1>
+              <WiCloud />&nbsp;Forecast over next 7 days
+            </h1>
             
-            {/* <h1>Upstart 13</h1> */}
 
-            <div className="card">
+            <div className="">
+              {/* <Form.Label htmlFor="inputAddress">Address</Form.Label> */}
+              <Form.Control
+                type="text"
+                placeholder="Enter the address - example: 456 Park Avenue, New York, NY 10022"
+                id="inputAddress"
+              />
+            
 
             </div>
-            <p className="read-the-docs">
-
-            </p>
+            
           </div>
         </Col>
       </Row>

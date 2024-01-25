@@ -71,7 +71,7 @@ export const HomeContainer = styled.div`
     }
   }
 
-  #main {
+  #content {
     background: rgba(255, 255, 255, 0.9);
     -webkit-box-shadow: -3px 5px 135px 5px #cccccc;
     box-shadow: -3px 5px 135px 5px #cccccc;
@@ -79,6 +79,35 @@ export const HomeContainer = styled.div`
     /* margin-top: 2rem; */
     min-height: 12rem;
     width: 100%;
+    padding: 1rem 2rem;
+    h1 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+
+      svg#Layer_1 {
+        min-height: 4rem;
+        min-width: 4rem;
+        margin-right: 0.5rem;
+      }
+    }
+
+    input[type="text"] {
+      box-shadow: none;
+
+      &::placeholder {
+        font-style: italic;
+        font-size: 0.8rem;
+      }
+      &:hover {
+        border: solid 1px ${(props) => props.theme.black};
+      }
+      &:focus {
+        border: solid 1px ${(props) => props.theme.primary};
+      }
+    }
   }
 
   #footer {
