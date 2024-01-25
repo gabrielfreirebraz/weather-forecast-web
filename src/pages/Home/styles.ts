@@ -94,18 +94,33 @@ export const HomeContainer = styled.div`
       }
     }
 
-    input[type="text"] {
-      box-shadow: none;
+    .searchAddress {
+      margin-left: 4.5rem;
 
-      &::placeholder {
-        font-style: italic;
-        font-size: 0.8rem;
+      input[type="text"] {
+        box-shadow: none;
+        min-width: 100%;
+
+        &::placeholder {
+          font-style: italic;
+          font-size: 0.8rem;
+        }
+        &:hover {
+          border: solid 1px ${(props) => props.theme.black};
+        }
+        &:focus {
+          border: solid 1px ${(props) => props.theme.primary};
+        }
       }
-      &:hover {
+      .btn {
+        background: ${(props) => props.theme.black};
         border: solid 1px ${(props) => props.theme.black};
-      }
-      &:focus {
-        border: solid 1px ${(props) => props.theme.primary};
+        width: 100%;
+        &:hover {
+          background: ${(props) => props.theme.primary};
+          border: solid 1px ${(props) => props.theme.primary};
+          /* opacity: 0.8; */
+        }
       }
     }
   }

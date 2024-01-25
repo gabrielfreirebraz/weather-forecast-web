@@ -1,5 +1,5 @@
 // import { AppProvider } from '../../contexts/defaultContext';
-import { Col, Form, Row } from 'react-bootstrap';
+import { Button, Col, Form, Row } from 'react-bootstrap';
 import { HomeContainer } from './styles';
 import imgFooter from '/nws.png'
 import { WiCloud } from 'react-icons/wi';
@@ -32,16 +32,24 @@ export const Home = () => {
             </h1>
             
 
-            <div className="">
               {/* <Form.Label htmlFor="inputAddress">Address</Form.Label> */}
-              <Form.Control
-                type="text"
-                placeholder="Enter the address - example: 456 Park Avenue, New York, NY 10022"
-                id="inputAddress"
-              />
+            <div className='searchAddress'>
+              <Row>
+                <Col md={9}>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter the address - example: 456 Park Avenue, New York, NY 10022"
+                    id="inputAddress"
+                  />
+                </Col>
+                <Col md={3}>
+                  <Button variant="primary">Display forecast</Button>
+                </Col>
+              </Row>
+            </div>
             
 
-            </div>
+
             
           </div>
         </Col>
