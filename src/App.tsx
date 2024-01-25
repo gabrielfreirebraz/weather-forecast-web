@@ -1,25 +1,17 @@
-import reactLogo from './assets/images/logo-upstart13.png'
+import { ThemeProvider } from 'styled-components'
+import { Home } from './pages/Home'
+import { GlobalStyle } from './styles/global'
+import { defaultTheme } from './styles/themes/defaultTheme'
 
 function App() {
   
 
   return (
-    <>
-      <div>
+    <ThemeProvider theme={defaultTheme}>  
+      <Home />
 
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Upstart 13</h1>
-      
-      <div className="card">
-        
-      </div>
-      <p className="read-the-docs">
-
-      </p>
-    </>
+      <GlobalStyle />
+    </ThemeProvider>
   )
 }
 

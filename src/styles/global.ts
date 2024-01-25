@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     background: transparent;    
+    height: 100%;
   }
   html {
     font-size: 16px;
