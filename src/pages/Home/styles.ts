@@ -49,9 +49,9 @@ export const HomeContainer = styled.div`
 
   #content {
     background: rgba(255, 255, 255, 0.9);
-    -webkit-box-shadow: -3px 5px 135px 5px #cccccc;
-    box-shadow: -3px 5px 135px 5px #cccccc;
-    border-radius: 15px;
+    -webkit-box-shadow: -3px 5px 75px 5px #e3e0e3;
+    box-shadow: -3px 5px 75px 5px #e3e0e3;
+    border-radius: 10px;
     margin-top: 0;
     height: fit-content;
     width: 100%;
@@ -105,8 +105,7 @@ export const HomeContainer = styled.div`
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      margin-left: 4.5rem;
-      margin-top: 1rem;
+      margin: 1rem 4.5rem 0;
     }
   }
 
