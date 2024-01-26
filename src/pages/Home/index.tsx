@@ -4,7 +4,10 @@ import { HomeContainer } from './styles';
 import imgFooter from '/nws.png'
 import { WiCloud } from 'react-icons/wi';
 
+
+
 import imgLogo from '../../assets/images/logo-upstart13.png'
+import { CardForecast } from './components/CardForecast';
 
 
 export const Home = () => {
@@ -28,12 +31,12 @@ export const Home = () => {
           <div id="content">
             
             <h1>
-              <WiCloud />&nbsp;Forecast over next 7 days
+              <WiCloud />Forecast over next 7 days
             </h1>
             
 
               {/* <Form.Label htmlFor="inputAddress">Address</Form.Label> */}
-            <div className='searchAddress'>
+            <div className='content__formAddress'>
               <Row>
                 <Col md={9}>
                   <Form.Control
@@ -48,17 +51,24 @@ export const Home = () => {
               </Row>
             </div>
             
-
-
-            
+            <div className='content__resultForecast'>
+              <CardForecast/>
+              <CardForecast/>
+              <CardForecast/>
+              <CardForecast/>
+              <CardForecast/>
+              <CardForecast/>
+              <CardForecast/>
+            </div>
           </div>
+          
         </Col>
       </Row>
       <Row>
         <Col>
           <div id="footer">
             <a href="https://www.weather.gov/documentation/services-web-api#/" target="_blank"><img src={imgFooter} /></a>
-            <p>The National Weather Service (NWS) API access to critical forecasts, alerts, and observations, along with other weather data.</p>
+            {/* <p>The National Weather Service (NWS) API access to critical forecasts, alerts, and observations, along with other weather data.</p> */}
           </div>
         </Col>
       </Row>

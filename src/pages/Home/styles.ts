@@ -1,32 +1,9 @@
 import styled from "styled-components";
 
 export const HomeContainer = styled.div`
-  height: 100vh;
+  height: 100%;
   width: 100%;
-  position: relative;
-
-  // for background opacity
-  &::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-    background: url("https://images.teamtailor-cdn.com/images/s3/teamtailor-production/hero_picture_large_full_cover-v6/image_uploads/b9d7b84e-8bc9-43e9-b032-b9c85b87cfd4/original.jpeg")
-      no-repeat center center;
-    background-size: cover;
-
-    opacity: 0.2;
-    content: "";
-    z-index: -1;
-  }
-
-  /**
-  Small: https://images.teamtailor-cdn.com/images/s3/teamtailor-production/hero_picture_small-v6/image_uploads/b9d7b84e-8bc9-43e9-b032-b9c85b87cfd4/original.jpeg
-  Madium: https://images.teamtailor-cdn.com/images/s3/teamtailor-production/hero_picture_medium-v6/image_uploads/b9d7b84e-8bc9-43e9-b032-b9c85b87cfd4/original.jpeg
-  Large: https://images.teamtailor-cdn.com/images/s3/teamtailor-production/hero_picture_large_full_cover-v6/image_uploads/b9d7b84e-8bc9-43e9-b032-b9c85b87cfd4/original.jpeg
-  */
+  /* position: relative; */
 
   #header {
     display: flex;
@@ -36,13 +13,12 @@ export const HomeContainer = styled.div`
     width: 100%;
     padding: 1rem 0;
     .header__logo {
-      max-width: 4.5rem;
+      max-width: 4rem;
     }
     h1 {
       color: ${(props) => props.theme.black};
-      margin: 2rem 0;
+      margin: 2rem 0 0; /* --> MARGIN BETWEEN HEADER AND CONTENT (BOTTOM ONLY) */
       font-size: 2rem;
-      /* background-color: rgba(0, 0, 0, 0.7); */
       padding: 1rem 5rem;
       letter-spacing: 0.35rem;
       font-weight: 900;
@@ -76,10 +52,11 @@ export const HomeContainer = styled.div`
     -webkit-box-shadow: -3px 5px 135px 5px #cccccc;
     box-shadow: -3px 5px 135px 5px #cccccc;
     border-radius: 15px;
-    /* margin-top: 2rem; */
-    min-height: 12rem;
+    margin-top: 0;
+    height: fit-content;
     width: 100%;
     padding: 1rem 2rem;
+
     h1 {
       font-size: 1.2rem;
       font-weight: 700;
@@ -94,7 +71,7 @@ export const HomeContainer = styled.div`
       }
     }
 
-    .searchAddress {
+    .content__formAddress {
       margin-left: 4.5rem;
 
       input[type="text"] {
@@ -123,12 +100,20 @@ export const HomeContainer = styled.div`
         }
       }
     }
+    .content__resultForecast {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 4.5rem;
+      margin-top: 1rem;
+    }
   }
 
   #footer {
     /* background: rgba(255, 255, 255, 0.5); */
-    position: absolute;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -144,6 +129,7 @@ export const HomeContainer = styled.div`
       color: ${(props) => props.theme.black};
       font-weight: 450;
       font-size: 0.9rem;
+      text-align: center;
     }
   }
 `;
