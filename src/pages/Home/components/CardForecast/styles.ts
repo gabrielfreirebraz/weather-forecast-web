@@ -22,9 +22,11 @@ export const CardForecastContainer = styled.div`
   &:hover {
     .card__forecastTitle h1 {
       color: ${(props) => props.theme.primary};
+      font-size: 1.5rem !important;
+      margin-top: -0.85rem;
     }
     .card__forecastItems {
-      border: solid 4px ${(props) => props.theme.primary};
+      border: solid 1px ${(props) => props.theme.primary};
     }
   }
 
@@ -32,9 +34,9 @@ export const CardForecastContainer = styled.div`
     transition: all 0.5s;
     display: flex;
     gap: 0.2rem;
-    border: solid 4px transparent;
+    border: dotted 1px ${(props) => props.theme.gray};
     border-radius: 7px;
-    padding: 0.2rem;
+    padding: 0.5rem;
 
     -webkit-box-shadow: -4px 5px 40px 1px rgba(242, 239, 242, 0.75);
     -moz-box-shadow: -4px 5px 40px 1px rgba(242, 239, 242, 0.75);
