@@ -27,7 +27,7 @@ export const Home = () => {
       </Row>
       <Row>
 
-        <Col md={{span: 10, offset: 1}}>
+        <Col xs={{span: 10, offset: 1}}>
           <div id="content">
             
             <h1>
@@ -53,22 +53,31 @@ export const Home = () => {
             
             <div className='content__resultForecast'>
               <Row>
-                <Col md={3} lg={4} xl={2}>
-                  <CardForecast/>
+                <Col md={6} lg={9} xl={10}>
+                  <Row>
+                    <Col md={3} lg={4} xl={2}>
+                      <CardForecast/>
+                    </Col>
+                    <Col md={3} lg={4} xl={2}>
+                      <CardForecast/>
+                    </Col>
+                    <Col md={3} lg={4} xl={2}>
+                      <CardForecast/>
+                    </Col>
+                    <Col md={3} lg={4} xl={2}>
+                      <CardForecast/>
+                    </Col>
+                    <Col md={3} lg={4} xl={2}>
+                      <CardForecast/>
+                    </Col>
+                    <Col md={3} lg={4} xl={2}>
+                      <CardForecast/>
+                    </Col>
+                  </Row>
                 </Col>
-                <Col md={3} lg={4} xl={2}>
-                  <CardForecast/>
-                </Col>
-                <Col md={3} lg={4} xl={2}>
-                  <CardForecast/>
-                </Col>
-                <Col md={3} lg={4} xl={2}>
-                  <CardForecast/>
-                </Col>
-                <Col md={3} lg={4} xl={2}>
-                  <CardForecast/>
-                </Col>
-                <Col md={3} lg={4} xl={2}>
+
+                {/* Grid hack for 7 days */}
+                <Col md={6} lg={3} xl={2}>
                   <CardForecast/>
                 </Col>
               </Row>
