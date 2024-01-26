@@ -4,45 +4,47 @@ import { IoMoonSharp } from "react-icons/io5";
 import { IoSunnySharp } from "react-icons/io5";
 
 
-export const CardForecast = () => {
+export const CardForecast = (props: ParamsItemForecast[]) => {
 
+  const forecastDay = props[0];
+  const forecastNight = props[1];
+
+  
   return (
+    // forecastDay && forecastNight && 
     <CardForecastContainer>
 
       <div className='card__forecast'>
         <div className='card__forecastTitle'>
-          <h1>Thu 1st</h1>
+          <h1>{forecastDay.name} {forecastDay.displayDate}</h1>
         </div>
 
         <div className='card__forecastItems'>
-          <Card>
-            <Card.Img variant="top" src="https://api.weather.gov/icons/land/day/few?size=medium" />
-            <Card.Body>
-              <Card.Title><span>38°</span></Card.Title>
-              <Card.Text>
-                
-                {/* <p>Sunny</p> */}
-                <label>Sunny, with a high near 57.</label>
-                
+          {forecastDay && 
+            <Card>
+              <Card.Img variant="top" src={forecastDay.icon} />
+              <Card.Body>
+                <Card.Title><span>{forecastDay.temperature}°</span></Card.Title>
+                <Card.Text>
+                  {forecastDay.description}
+                </Card.Text>
                 <IoSunnySharp />
-                
-              </Card.Text>
-            </Card.Body>
-          </Card>
+              </Card.Body>
 
-          <Card>
-            <Card.Img variant="top" src="https://api.weather.gov/icons/land/night/few?size=medium" />
-            <Card.Body>
-              <Card.Title><span>38°</span></Card.Title>
-              <Card.Text>
-                
-                {/* <p>Sunny</p> */}
-                <label>Sunny, with a high near 57.</label>
-                
+            </Card>}
+
+          {forecastNight && 
+            <Card>
+              <Card.Img variant="top" src={forecastNight?.icon} />
+              <Card.Body>
+                <Card.Title><span>{forecastNight?.temperature}°</span></Card.Title>
+                <Card.Text>                  
+                  {forecastNight?.description}
+                </Card.Text>
                 <IoMoonSharp />
-              </Card.Text>
-            </Card.Body>
-          </Card>
+              </Card.Body>
+
+            </Card>}
         </div>
       </div>
     </CardForecastContainer>

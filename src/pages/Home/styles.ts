@@ -104,7 +104,8 @@ export const HomeContainer = styled.div`
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      align-items: center;
+      align-items: start;
+      flex-wrap: wrap;
       margin: 1rem 0 0 0.5rem;
     }
   }
@@ -119,7 +120,7 @@ export const HomeContainer = styled.div`
     justify-content: center;
     gap: 1rem;
     width: 100%;
-    height: 9rem;
+    height: 7rem;
 
     img {
       max-height: 2.5rem;

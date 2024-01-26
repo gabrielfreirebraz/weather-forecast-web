@@ -14,7 +14,7 @@ export const CardForecastContainer = styled.div`
 
     h1 {
       transition: all 0.1s;
-      font-size: 1rem !important;
+      font-size: 0.85rem !important;
       font-weight: 450 !important;
     }
   }
@@ -22,8 +22,8 @@ export const CardForecastContainer = styled.div`
   &:hover {
     .card__forecastTitle h1 {
       color: ${(props) => props.theme.primary};
-      font-size: 1.5rem !important;
-      margin-top: -0.85rem;
+      font-size: 1.4rem !important;
+      margin-top: -0.75rem;
     }
     .card__forecastItems {
       border: solid 1px ${(props) => props.theme.primary};
@@ -37,14 +37,16 @@ export const CardForecastContainer = styled.div`
     border: dotted 1px ${(props) => props.theme.gray};
     border-radius: 7px;
     padding: 0.35rem;
+    height: 18rem;
+    /* display: block; */
 
     -webkit-box-shadow: -4px 5px 40px 1px rgba(242, 239, 242, 0.75);
     -moz-box-shadow: -4px 5px 40px 1px rgba(242, 239, 242, 0.75);
     box-shadow: -4px 5px 40px 1px rgba(242, 239, 242, 0.75);
 
     .card {
-      width: 4.2rem;
-      height: fit-content;
+      width: 6rem;
+      height: 100%;
       border: none;
       background-color: rgba(255, 255, 255, 0.7);
       /* border: solid 1px ${(props) => props.theme.lightGray}; */
@@ -61,9 +63,9 @@ export const CardForecastContainer = styled.div`
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      label {
+
+      p {
         font-size: 0.7rem;
-        margin: 0.5rem 0 1rem;
       }
     }
   }
