@@ -105,7 +105,7 @@ export const HomeContainer = styled.div`
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      margin: 1rem 4.5rem 0;
+      margin: 1rem 0 0 4.5rem;
     }
   }
 

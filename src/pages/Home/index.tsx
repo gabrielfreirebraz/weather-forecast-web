@@ -52,13 +52,27 @@ export const Home = () => {
             </div>
             
             <div className='content__resultForecast'>
-              <CardForecast/>
-              <CardForecast/>
-              <CardForecast/>
-              <CardForecast/>
-              <CardForecast/>
-              <CardForecast/>
-              <CardForecast/>
+              <Row>
+                <Col md={3} lg={4} xl={2}>
+                  <CardForecast/>
+                </Col>
+                <Col md={3} lg={4} xl={2}>
+                  <CardForecast/>
+                </Col>
+                <Col md={3} lg={4} xl={2}>
+                  <CardForecast/>
+                </Col>
+                <Col md={3} lg={4} xl={2}>
+                  <CardForecast/>
+                </Col>
+                <Col md={3} lg={4} xl={2}>
+                  <CardForecast/>
+                </Col>
+                <Col md={3} lg={4} xl={2}>
+                  <CardForecast/>
+                </Col>
+              </Row>
+ 
             </div>
           </div>
           
