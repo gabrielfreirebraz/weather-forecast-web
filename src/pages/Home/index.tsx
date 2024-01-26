@@ -21,6 +21,8 @@ export const Home = () => {
 
 
   const onSearch = async () => {
+    if (!address?.trim()) return;
+
     setLoading(true);
 
     const res: any = await axios.get(`${process.env.API_ENDPOINT}/api/geocoding?address=${address}`, { proxy: false })

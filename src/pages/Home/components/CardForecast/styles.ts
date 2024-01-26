@@ -38,11 +38,10 @@ export const CardForecastContainer = styled.div`
     border-radius: 7px;
     padding: 0.35rem;
     height: 18rem;
-    /* display: block; */
 
-    -webkit-box-shadow: -4px 5px 40px 1px rgba(242, 239, 242, 0.75);
+    /* -webkit-box-shadow: -4px 5px 40px 1px rgba(242, 239, 242, 0.75);
     -moz-box-shadow: -4px 5px 40px 1px rgba(242, 239, 242, 0.75);
-    box-shadow: -4px 5px 40px 1px rgba(242, 239, 242, 0.75);
+    box-shadow: -4px 5px 40px 1px rgba(242, 239, 242, 0.75); */
 
     .card {
       width: 6rem;

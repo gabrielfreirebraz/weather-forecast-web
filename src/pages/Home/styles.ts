@@ -107,6 +107,12 @@ export const HomeContainer = styled.div`
       align-items: start;
       flex-wrap: wrap;
       margin: 1rem 0 0 0.5rem;
+
+      @media (max-width: 768px) {
+        justify-content: center;
+        align-items: start;
+        gap: 0.5rem;
+      }
     }
   }
 
