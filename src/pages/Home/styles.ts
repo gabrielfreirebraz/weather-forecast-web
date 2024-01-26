@@ -17,7 +17,7 @@ export const HomeContainer = styled.div`
     }
     h1 {
       color: ${(props) => props.theme.black};
-      margin: 2rem 0 0; /* --> MARGIN BETWEEN HEADER AND CONTENT (BOTTOM ONLY) */
+      margin: 2rem 0 -2rem; /* --> MARGIN BETWEEN HEADER AND CONTENT (BOTTOM ONLY) */
       font-size: 2rem;
       padding: 1rem 5rem;
       letter-spacing: 0.35rem;
@@ -55,7 +55,7 @@ export const HomeContainer = styled.div`
     margin-top: 0;
     height: fit-content;
     width: 100%;
-    padding: 1rem 2rem;
+    padding: 2rem 4rem;
 
     h1 {
       font-size: 1.2rem;
