@@ -36,7 +36,7 @@ export const CardForecastContainer = styled.div`
     gap: 0.2rem;
     border: dotted 1px ${(props) => props.theme.gray};
     border-radius: 7px;
-    padding: 0.5rem;
+    padding: 0.35rem;
 
     -webkit-box-shadow: -4px 5px 40px 1px rgba(242, 239, 242, 0.75);
     -moz-box-shadow: -4px 5px 40px 1px rgba(242, 239, 242, 0.75);

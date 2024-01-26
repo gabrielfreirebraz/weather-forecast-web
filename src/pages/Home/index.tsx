@@ -1,16 +1,40 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // import { AppProvider } from '../../contexts/defaultContext';
 import { Button, Col, Form, Row } from 'react-bootstrap';
 import { HomeContainer } from './styles';
-import imgFooter from '/nws.png'
 import { WiCloud } from 'react-icons/wi';
-
-
-
-import imgLogo from '../../assets/images/logo-upstart13.png'
 import { CardForecast } from './components/CardForecast';
+import { useState } from 'react';
+
+import imgFooter from '/nws.png'
+import imgLogo from '../../assets/images/logo-upstart13.png'
+import axios from 'axios';
 
 
 export const Home = () => {
+
+  const [address, setAddress] = useState<string | null>(null);
+  const [periods, setPeriods] = useState(null);
+
+
+  const onSearch = async () => {
+
+    const res: any = await axios.get(`${process.env.API_ENDPOINT}/api/geocoding?address=${address}`, { proxy: false })
+    const {x , y} = res.data.result.addressMatches[0].coordinates;
+    console.log(x);    
+    console.log(y);    
+
+    const resEndpoint: any = await axios.get(`${process.env.API_ENDPOINT}/api/coordinates?latitude=${y}&longitude=${x}`, { proxy: false })
+    
+    const urlForecast = resEndpoint.data.properties.forecast;
+    console.log(resEndpoint.data.properties.forecast)
+
+    const resCoordinates: any = await axios.get(`${urlForecast}`, { proxy: false })
+    const currPeriods = resCoordinates.data.properties.periods; 
+    console.log(currPeriods);
+
+    setPeriods(periods);
+  }
 
   return (
 
@@ -43,10 +67,11 @@ export const Home = () => {
                     type="text"
                     placeholder="Enter the address - example: 456 Park Avenue, New York, NY 10022"
                     id="inputAddress"
+                    onChange={(e) => setAddress(e.target.value)}
                   />
                 </Col>
                 <Col md={3}>
-                  <Button variant="primary">Display forecast</Button>
+                  <Button variant="primary" onClick={() => onSearch()}>Display forecast</Button>
                 </Col>
               </Row>
             </div>
