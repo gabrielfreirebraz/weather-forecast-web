@@ -16,9 +16,12 @@ export const Home = () => {
 
   const [address, setAddress] = useState<string | null>(null);
   const [periods, setPeriods] = useState<ParamsItemForecast[] | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+
 
 
   const onSearch = async () => {
+    setLoading(true);
 
     const res: any = await axios.get(`${process.env.API_ENDPOINT}/api/geocoding?address=${address}`, { proxy: false })
     const {x , y} = res.data.result.addressMatches[0].coordinates;
@@ -73,6 +76,7 @@ export const Home = () => {
     // currPeriods[0].detailedForecast; // optional
 
     setPeriods(arrs);
+    setLoading(false);
   }
 
   return (
@@ -110,7 +114,7 @@ export const Home = () => {
                   />
                 </Col>
                 <Col md={3}>
-                  <Button variant="primary" onClick={() => onSearch()}>Display forecast (°F)</Button>
+                  <Button variant="primary" onClick={() => onSearch()}>{loading ? 'Please wait...' : 'Display forecast (°F)'}</Button>
                 </Col>
               </Row>
             </div>
