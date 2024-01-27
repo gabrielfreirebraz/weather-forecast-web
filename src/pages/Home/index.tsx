@@ -44,10 +44,9 @@ export const Home = () => {
     const arrMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
     for (let i = 0; i < currPeriods.length; i++) {
-      if (i === 0) continue;
-
+  
       const obj = currPeriods[i];
-      // console.log(obj)
+      console.log(obj)
       const dt = (obj.startTime.split('T')[0]);
       const day = dayjs(dt).get('date');
       const month = dayjs(dt).get('month');
@@ -126,9 +125,9 @@ export const Home = () => {
                     const nextObj = arr[idx+1] ?? null;
                     const params = [obj, nextObj];
 
-                    // console.log(obj.id%2 === 0 && params)
+                    console.log(obj.id%2 > 0);
                     return (
-                      obj.id%2 === 0 &&
+                      obj.id%2 > 0 && !!obj.isDaytime &&
                         <CardForecast {...params} key={obj.id} />
                     );
                 })}
