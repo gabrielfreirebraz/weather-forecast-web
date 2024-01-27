@@ -25,13 +25,23 @@ export const Home = () => {
 
     setLoading(true);
 
-    const res: any = await axios.get(`${process.env.API_ENDPOINT}/api/geocoding?address=${address}`, { proxy: false })
-    const {x , y} = res.data.result.addressMatches[0].coordinates;
-    console.log(x);    
-    console.log(y);    
+    const res: any = await axios.get(`${process.env.API_ENDPOINT}/api/geocoding`, 
+    { 
+      params: { address },
+      proxy: false 
+    })
 
-    const resEndpoint: any = await axios.get(`${process.env.API_ENDPOINT}/api/coordinates?latitude=${y}&longitude=${x}`, { proxy: false })
-    
+    const {x , y} = res.data.result.addressMatches[0].coordinates;
+
+    const resEndpoint: any = await axios.get(`${process.env.API_ENDPOINT}/api/coordinates`, 
+    { 
+      params: {
+        latitude: y,
+        longitude: x
+      },
+      proxy: false 
+    })
+
     const urlForecast = resEndpoint.data.properties.forecast;
     console.log(resEndpoint.data.properties.forecast)
 
