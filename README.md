@@ -1,30 +1,15 @@
-# React + TypeScript + Vite
+# Weather forecast from US
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The next over 7 days forecast for a specified postal address throught [US National Weather Service API](https://www.weather.gov/documentation/services-web-api) works from [.NET project](https://github.com/gabrielfreirebraz/weather-forecast-api) like proxy on backend.
 
-Currently, two official plugins are available:
+![National Weather Service](https://www.weather.gov/css/images/header.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies 
 
-## Expanding the ESLint configuration
+- React + ViteJS
+- Typescript + SWC
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Preview
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+[Click here to preview](https://drive.google.com/file/d/1RYBE9MJxvxxAv6JfKhOsop1rUyrKUM3r/view?usp=sharing)
+![Project image](https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYSDhjkNGVTTFGR8HcbIS-k3MEgCozkNPDvTgMO_Pbef8z5A-WiwAwNTwWZW7fhYCjx-5w6xMQ-b9oN369ugQJKQiSkiiA=w1920-h968)
