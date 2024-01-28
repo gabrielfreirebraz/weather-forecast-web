@@ -10,7 +10,7 @@ import dayjs from "dayjs";
 export const ForecastsToDisplay = (forecasts: any): ParamsItemForecast[] => {
   const newForecats: ParamsItemForecast[] = forecasts.map(
     (obj: any): ParamsItemForecast => {
-      console.log(obj);
+      //console.log(obj);
       const dt = obj.startTime.split("T")[0];
       const day = dayjs(dt).get("date");
       const month = dayjs(dt).get("month");

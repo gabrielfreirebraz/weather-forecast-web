@@ -68,8 +68,6 @@ export const Home = () => {
               <WiCloud />Forecast over next 7 days
             </h1>
             
-
-              {/* <Form.Label htmlFor="inputAddress">Address</Form.Label> */}
             <div className='content__formAddress'>
               <Row>
                 <Col md={9}>
@@ -81,7 +79,7 @@ export const Home = () => {
                   />
                 </Col>
                 <Col md={3}>
-                  <Button variant="primary" onClick={() => onSubmit()}>{loading ? 'Please wait...' : 'Display forecast (°F)'}</Button>
+                  <Button disabled={loading} variant="primary" onClick={() => onSubmit()}>{loading ? 'Please wait...' : 'Display forecast (°F)'}</Button>
                 </Col>
               </Row>
             </div>
