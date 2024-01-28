@@ -4,12 +4,13 @@ import { Button, Col, Form, Row } from 'react-bootstrap';
 import { HomeContainer } from './styles';
 import { WiCloud } from 'react-icons/wi';
 import { CardForecast } from './components/CardForecast';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import imgFooter from '/nws.png'
 import imgLogo from '../../assets/images/logo-upstart13.png'
-import axios from 'axios';
-import dayjs from 'dayjs';
+import { GeocodingService } from '../../services/GeocodingService';
+import { ForecastService } from '../../services/ForecastService';
+import { ForecastsToDisplay } from './utils/ForecastsToDisplay';
 
 
 export const Home = () => {
@@ -19,75 +20,30 @@ export const Home = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
 
+  useEffect(() => {
 
-  const onSearch = async () => {
+    if (loading) {
+
+      (async () => {
+              
+        const {x , y} = await GeocodingService(address); // get latitude and longitude
+        const forecasts = await ForecastService(y,x); // get forecasts like periods
+        const newForecasts: ParamsItemForecast[] = ForecastsToDisplay(forecasts);
+
+        setPeriods(newForecasts);   
+        setLoading(false);
+      
+      })(); 
+    }
+  }, [loading, address]);
+
+
+  const onSubmit = () => {
+
+    // rules and validations for before to submmit
     if (!address?.trim()) return;
 
     setLoading(true);
-
-    const res: any = await axios.get(`${process.env.API_ENDPOINT}/api/geocoding`, 
-    { 
-      params: { address },
-      proxy: false 
-    })
-
-    const {x , y} = res.data.result.addressMatches[0].coordinates;
-
-    const resEndpoint: any = await axios.get(`${process.env.API_ENDPOINT}/api/coordinates`, 
-    { 
-      params: {
-        latitude: y,
-        longitude: x
-      },
-      proxy: false 
-    })
-
-    const urlForecast = resEndpoint.data.properties.forecast;
-    console.log(resEndpoint.data.properties.forecast)
-
-    const resCoordinates: any = await axios.get(`${urlForecast}`, { proxy: false })
-    const currPeriods = resCoordinates.data.properties.periods; 
-
-
-    const arrs: ParamsItemForecast[] = [];
-
-    const arrMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-    for (let i = 0; i < currPeriods.length; i++) {
-  
-      const obj = currPeriods[i];
-      console.log(obj)
-      const dt = (obj.startTime.split('T')[0]);
-      const day = dayjs(dt).get('date');
-      const month = dayjs(dt).get('month');
-      // const year = dayjs(dt).get('year');
-
-      const displayDate = day+'-'+arrMonths[month];
-
-      const curr: ParamsItemForecast = {
-        id: obj.number,
-        displayDate,
-        temperature: obj.temperature,
-        icon: obj.icon,
-        description: obj.shortForecast,
-        unit: obj.temperatureUnit,
-        name: obj.name,
-        isDaytime: obj.isDaytime
-      }
-
-      arrs.push(curr)
-    }
-    // currPeriods[0].temperature;
-    // currPeriods[0].temperatureUnit;
-    // currPeriods[0].startTime;
-    // currPeriods[0].shortForecast;
-    // currPeriods[0].isDaytime;
-    // currPeriods[0].icon;
-    // currPeriods[0].name; // ex: tonight
-    // currPeriods[0].detailedForecast; // optional
-
-    setPeriods(arrs);
-    setLoading(false);
   }
 
   return (
@@ -125,7 +81,7 @@ export const Home = () => {
                   />
                 </Col>
                 <Col md={3}>
-                  <Button variant="primary" onClick={() => onSearch()}>{loading ? 'Please wait...' : 'Display forecast (°F)'}</Button>
+                  <Button variant="primary" onClick={() => onSubmit()}>{loading ? 'Please wait...' : 'Display forecast (°F)'}</Button>
                 </Col>
               </Row>
             </div>
@@ -134,10 +90,10 @@ export const Home = () => {
                 {periods && periods.map((obj,idx,arr) => {
                     const nextObj = arr[idx+1] ?? null;
                     const params = [obj, nextObj];
-
-                    console.log(obj.id%2 > 0);
+                    
+                    //console.log(obj.id%2 > 0);
                     return (
-                      obj.id%2 > 0 && !!obj.isDaytime &&
+                      !!obj.isDaytime &&
                         <CardForecast {...params} key={obj.id} />
                     );
                 })}
