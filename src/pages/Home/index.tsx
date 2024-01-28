@@ -84,7 +84,7 @@ export const Home = () => {
               </Row>
             </div>
             
-            <div className='content__resultForecast'>
+            <div className={`content__resultForecast ${!loading && 'animate__animated animate__fadeIn'}`}>
                 {periods && periods.map((obj,idx,arr) => {
                     const nextObj = arr[idx+1] ?? null;
                     const params = [obj, nextObj];
