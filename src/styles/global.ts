@@ -11,10 +11,9 @@ export const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;   
     margin: 0;
     padding: 0; 
-    /* height: 100%; */
     
     // for background opacity
-    &::before {
+    /* &::before {
       position: absolute;
       top: 0;
       left: 0;
@@ -27,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
       opacity: 0.1;
       content: "";
       z-index: -1;
-    }
+    } */
 
     /**
     Small: https://images.teamtailor-cdn.com/images/s3/teamtailor-production/hero_picture_small-v6/image_uploads/b9d7b84e-8bc9-43e9-b032-b9c85b87cfd4/original.jpeg
