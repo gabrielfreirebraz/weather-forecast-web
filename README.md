@@ -4,7 +4,7 @@ The next over 7 days forecast for a specified postal address throught [US Nation
 
 ![National Weather Service](https://www.weather.gov/css/images/header.png)
 
-## Technologies 
+## Technologies
 
 - React + ViteJS
 - Typescript + SWC
@@ -12,4 +12,4 @@ The next over 7 days forecast for a specified postal address throught [US Nation
 ## Preview
 
 [Click here to preview](https://drive.google.com/file/d/1RYBE9MJxvxxAv6JfKhOsop1rUyrKUM3r/view?usp=sharing)
-![Project image](https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYSDhjkNGVTTFGR8HcbIS-k3MEgCozkNPDvTgMO_Pbef8z5A-WiwAwNTwWZW7fhYCjx-5w6xMQ-b9oN369ugQJKQiSkiiA=w1920-h968)
+![Project image](https://lh3.google.com/u/0/d/1ukQ24kNHkI2esMGCPIX9JEA5EZe84rlU=w1920-h883-iv5)
